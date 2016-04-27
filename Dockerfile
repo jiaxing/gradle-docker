@@ -13,10 +13,10 @@ RUN echo "$GRADLE_SHA256  gradle.zip" | sha256sum -c - && \
  ln -s gradle-${GRADLE_VERSION} gradle
 
 ENV GRADLE_HOME /usr/bin/gradle
-ENV GRADLE_USER_HOME /cache/.gradle
+ENV GRADLE_USER_HOME /cache/gradle
 ENV PATH $PATH:$GRADLE_HOME/bin
 
-VOLUME /app
+VOLUME ["/app", $GRADLE_USER_HOME]
 
 WORKDIR /app
 ENTRYPOINT ["gradle"]
