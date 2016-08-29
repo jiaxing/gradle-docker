@@ -1,5 +1,9 @@
 FROM java:8
 
+RUN apt-get clean && apt-get update \
+  && apt-get install -y --no-install-recommends bash
+  && rm -rf /var/lib/apt/lists/*
+
 ARG GRADLE_VERSION=3.0
 ARG GRADLE_URL=https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 ARG GRADLE_SHA256=39c906941a474444afbddc38144ed44166825acb0a57b0551dddb04bbf157f80
