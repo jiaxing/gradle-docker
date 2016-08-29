@@ -19,5 +19,4 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 VOLUME ["/app", $GRADLE_USER_HOME]
 
 WORKDIR /app
-ENTRYPOINT ["gradle"]
-CMD ["--version"]
+CMD ["gradle", "--version"]
