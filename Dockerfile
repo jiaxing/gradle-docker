@@ -1,7 +1,7 @@
 FROM java:8
 
 RUN apt-get clean && apt-get update \
-  && apt-get install -y --no-install-recommends bash
+  && apt-get install -y --no-install-recommends bash \
   && rm -rf /var/lib/apt/lists/*
 
 ARG GRADLE_VERSION=3.0
