@@ -1,14 +1,12 @@
 FROM java:8
 
-ARG GRADLE_VERSION=3.0
-ARG GRADLE_URL=https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
-ARG GRADLE_SHA256=39c906941a474444afbddc38144ed44166825acb0a57b0551dddb04bbf157f80
+ARG GRADLE_VERSION=3.3
+ARG GRADLE_URL=https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 
 ADD $GRADLE_URL /usr/bin/gradle.zip
 
 WORKDIR /usr/bin
-RUN echo "$GRADLE_SHA256  gradle.zip" | sha256sum -c - && \
- unzip gradle.zip && \
+RUN unzip gradle.zip && \
  rm gradle.zip && \
  ln -s gradle-${GRADLE_VERSION} gradle
 
