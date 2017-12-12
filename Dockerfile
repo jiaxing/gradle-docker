@@ -1,6 +1,6 @@
 FROM java:8
 
-ARG GRADLE_VERSION=3.3
+ARG GRADLE_VERSION=4.4
 ARG GRADLE_URL=https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 
 ADD $GRADLE_URL /usr/bin/gradle.zip
